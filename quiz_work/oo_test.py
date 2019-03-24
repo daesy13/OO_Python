@@ -12,7 +12,7 @@ class Student:
         return "You're doing a great job, {}".format(self.name)
 
 class Student:
-    name = "Your Name"
+    name = "Daesy"
 
     def praise(self):
         return "You inspire me, {}".format(self.name)
