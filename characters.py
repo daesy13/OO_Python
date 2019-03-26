@@ -1,14 +1,16 @@
 import random
 
-class Thief:
-    sneaky = True
-
-    def __init__(self, name, sneaky=True, **kwargs):
+class Characters:
+    def __init__(self, name, **kwargs):
         self.name = name
-        self.sneaky = sneaky
 
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+
+
+class Thief(Characters):
+    sneaky = True
 
     def pickpocket(self):
         # print("Called by {}".format(self))
