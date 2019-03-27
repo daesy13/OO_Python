@@ -12,6 +12,10 @@ class Characters:
 class Thief(Characters):
     sneaky = True
 
+    def __init__(self, name, sneaky= True, **kwargs):
+        super().__init__(name, **kwargs)
+        self.sneaky = sneaky
+
     def pickpocket(self):
         # print("Called by {}".format(self))
         return self.sneaky and bool(random.randint(0,1))
