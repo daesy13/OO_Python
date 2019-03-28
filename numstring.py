@@ -32,3 +32,18 @@ class NumString:
     def __iadd__(self,other):
         self.value = self + other
         return self.value
+
+    def __mul__(self, other):
+        if '.' in self.value:
+            return float(self) * other
+        return int(self) * other
+
+    def __rmul__(self, other):
+        return self * other
+
+    def __imul__(self, other):
+        self.value = self * other
+        return self.value
+
+
+
