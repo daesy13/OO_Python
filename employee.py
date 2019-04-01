@@ -14,6 +14,12 @@ class Employee:
     def apply_raise(self):
         self.pay =  int(self.pay * self.raise_amt)
 
+    def __repr__(self):
+        return "Employee('{}', '{}', '{}')".format(self.first, self.last, self.pay)
+
+    def __str__(self):
+        return "{} - {}".format(self.fullname(), self.email)
+
 class Developer(Employee):
     raise_amt = 1.10
     """docstring for Developer"""
@@ -46,33 +52,42 @@ class Manager(Employee):
 #****this will let you see a mapping of that specific class ***
 # print(help(Developer))
 
-# emp_1 = Employee("Daesy", "Stephens", 150000)
-# emp_2 = Employee("Jhon", "Doe", 125000)
+emp_1 = Employee("Daesy", "Stephens", 150000)
+emp_2 = Employee("Jhon", "Doe", 125000)
 
 # print(emp_1.email)
 # print(emp_2.email)
 
-dev_1 = Devloyee("Daesy", "Stephens", 150000, "Python")
-dev_2 = Devloyee("Jhon", "Doe", 125000, "Java")
+# dev_1 = Developer("Daesy", "Stephens", 150000, "Python")
+# dev_2 = Developer("Jhon", "Doe", 125000, "Java")
 
-mgr_1 = Manager("Sue", "Smith", 200000, [dev_1])
+# mgr_1 = Manager("Sue", "Smith", 200000, [dev_1])
 
 #********TEST CASE********
-print(isinstance(mgr_1, Employee))#True
-print(isinstance(mgr_1, Developer))#False
+# print(isinstance(mgr_1, Employee))#True
+# print(isinstance(mgr_1, Developer))#False
 
-print(issubclass(Developer, Employee))#True
-print(issubclass(Manager, Developer))#False
+# print(issubclass(Developer, Employee))#True
+# print(issubclass(Manager, Developer))#False
 
 
-print(mgr_1.email)
+# print(mgr_1.email)
 
-mgr_1.add_emp(dev_2)
-mgr_1.print_emps()
+# mgr_1.add_emp(dev_2)
+# mgr_1.print_emps()
 
-mgr_1.remove_emp(dev_2)
-mgr_1.print_emps()
+# mgr_1.remove_emp(dev_2)
+# mgr_1.print_emps()
 
 # print(dev_1.email)
 # dev_1.apply_raise()
 # print(dev_1.prog_lang)
+
+# print(emp_1)
+
+print(repr(emp_1))
+print(str(emp_1))
+
+print(emp_1.__repr__())
+print(emp_1.__str__())
+
