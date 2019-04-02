@@ -20,6 +20,13 @@ class Employee:
     def __str__(self):
         return "{} - {}".format(self.fullname(), self.email)
 
+    def __add__(self, other):
+        return self.pay + other.pay
+
+    def __len__(self):
+        return len(self.fullname())
+
+
 class Developer(Employee):
     raise_amt = 1.10
     """docstring for Developer"""
@@ -85,9 +92,19 @@ emp_2 = Employee("Jhon", "Doe", 125000)
 
 # print(emp_1)
 
-print(repr(emp_1))
-print(str(emp_1))
+# print(repr(emp_1))
+# print(str(emp_1))
 
-print(emp_1.__repr__())
-print(emp_1.__str__())
+# print(emp_1.__repr__())
+# print(emp_1.__str__())
+
+# print(1+2)
+# print(int.__add__(1, 2))
+# print(str.__add__('a', 'b'))
+
+# print(emp_1 + emp_2)
+
+# lenght also use a dunder method behind the code
+print(len('test'))
+print(len(emp_1))
 
